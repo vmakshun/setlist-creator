@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const messageText = `Selected Songs:\n${selectedSongsData.map(song => `${song.name} - ${song.duration}`).join('\n')}`;
 
         // Send the message text to the bot
-        fetch(`https://api.telegram.org/bot${tg.initDataUnsafe.botToken}/sendMessage`, {
+        fetch(`https://api.telegram.org/bot7425160713:AAEMyMtYUox9kAEfXKNeiOUoJFAIQkNTf6k/sendMessage`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
