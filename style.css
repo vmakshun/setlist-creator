@@ -13,6 +13,7 @@ body {
     background: white;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 h1 {
@@ -22,7 +23,7 @@ h1 {
 .song-list {
     max-height: 400px;
     overflow-y: auto;
-    margin-bottom: 20px;
+    margin-bottom: 60px; /* Leave space for the total time and create button */
 }
 
 .song-item {
@@ -39,7 +40,9 @@ h1 {
 
 .total-time {
     position: fixed;
-    bottom: 60px;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
     background: #fff;
     padding: 10px;
     border: 1px solid #ddd;
@@ -49,14 +52,17 @@ h1 {
 }
 
 .create-button {
-    width: 100%;
+    width: 260px;
     padding: 10px;
     background-color: #007bff;
     color: white;
     border: none;
     cursor: pointer;
     text-align: center;
-    margin-top: 10px;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .create-button:hover {
