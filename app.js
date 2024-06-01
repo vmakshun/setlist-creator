@@ -100,15 +100,17 @@ document.addEventListener("DOMContentLoaded", () => {
             name: song.name,
             duration: song.duration,
         }));
-        tg.sendData(JSON.stringify(selectedSongsData));
-        fetch(`https://api.telegram.org/bot${tg.initDataUnsafe.user.bot_token}/sendMessage`, {
+        const messageText = `Selected Songs:\n${selectedSongsData.map(song => `${song.name} - ${song.duration}`).join('\n')}`;
+
+        // Send the message text to the bot
+        fetch(`https://api.telegram.org/bot${tg.initDataUnsafe.botToken}/sendMessage`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
                 chat_id: tg.initDataUnsafe.user.id,
-                text: `Selected Songs:\n${selectedSongsData.map(song => `${song.name} - ${song.duration}`).join('\n')}`
+                text: messageText
             })
         }).then(response => {
             if (response.ok) {
