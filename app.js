@@ -51,7 +51,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Initialize Telegram WebApp
     const tg = window.Telegram.WebApp;
-    tg.expand();
+      setTimeout(() => {
+        tg.expand();
+    }, 5000);
 
     songs.forEach((song, index) => {
         const songItem = document.createElement('div');
