@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	
       setTimeout(() => {
         tg.expand();
-    }, 10000);
+    }, 1000);
 
     songs.forEach((song, index) => {
         const songItem = document.createElement('div');
